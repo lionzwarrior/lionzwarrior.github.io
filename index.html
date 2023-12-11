@@ -5,7 +5,8 @@
 </head>
 
 <style>
-	body {
+/* Default styles for desktop */
+body {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
@@ -148,6 +149,25 @@ hr {
  padding: 15px;
  }
 }
+/* Styles for mobile devices in portrait mode */
+@media screen and (max-width: 480px) and (orientation: portrait) {
+ body {
+ flex-direction: column;
+ }
+ .container {
+ flex-direction: column;
+ }
+}
+/* Styles for mobile devices in landscape mode */
+@media screen and (max-width: 480px) and (orientation: landscape) {
+ body {
+ flex-direction: row;
+ }
+ .container {
+ flex-direction: row;
+ }
+}
+
 </style>
 
 <body>
