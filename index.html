@@ -12,10 +12,9 @@ body {
  padding: 0;
  box-sizing: border-box;
  font-family: 'Roboto', sans-serif;
- display: flex;
  justify-content: center;
  align-items: center;
- height: 100vh;
+ height: auto;
 }
 .container {
  padding: 0 15px;
@@ -71,6 +70,8 @@ form input {
  margin-bottom: 15px;
  font-size: 1rem;
  padding: 0 14px;
+ margin-left: 10px;
+ margin-right: 10px;
 }
 form input:focus {
  outline: none;
@@ -161,18 +162,22 @@ hr {
 @media screen and (max-width: 480px) and (orientation: portrait) {
  body {
  flex-direction: column;
+ width: 100%;
  }
  .container {
  flex-direction: column;
+ width: 100%;
  }
 }
 /* Styles for mobile devices in landscape mode */
 @media screen and (max-width: 480px) and (orientation: landscape) {
  body {
  flex-direction: row;
+ width: 100%;
  }
  .container {
  flex-direction: row;
+ width: 100%;
  }
 }
 
