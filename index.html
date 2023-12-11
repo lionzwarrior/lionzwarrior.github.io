@@ -10,7 +10,7 @@
 	<p id="test">Hello</p>
 	<p id="test2">Test2</p>
 <script>
-	
+
 	navigator.userAgentData
       .getHighEntropyValues([
         "architecture",
@@ -22,7 +22,7 @@
       .then((ua) => {
         const model = ua["model"];
         if (model){
-        	document.getElementById("test2").innerHTML = "Phone: " + model;
+        	document.getElementById("test").innerHTML = "Phone: " + model;
         } 
       });
 
