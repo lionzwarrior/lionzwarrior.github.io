@@ -18,7 +18,7 @@ body {
 }
 .container {
  padding: 0 15px;
- height: 100%;
+ height: auto;
  justify-content: center;
  align-items: center;
  display: flex;
@@ -135,17 +135,30 @@ hr {
  body {
  	max-width: 900px;
  }	
+ .container {
+max-width: 900px;
+ }
+
  .facebook-page {
  flex-direction: column;
  }
  .facebook-page .text {
  margin-bottom: 30px;
  }
+  .facebook-page h1 {
+text-align: center;
+ }
+ .facebook-page p {
+text-align: center;
+ }
 }
 @media (max-width: 460px) {
  body {
  	max-width: 460px;
  }	
+ .container {
+ 	max-width: 460px;
+ }
  .facebook-page h1 {
  font-size: 3.5rem;
  }
