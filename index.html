@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 </head>
 <body>
@@ -43,10 +44,22 @@
       .then((ua) => {
         const model = ua["model"];
         if (model){
-        	document.getElementById("test2").innerHTML = "Phone: " + model
-        	console.log("Phone: " + model);
+        	document.getElementById("test2").innerHTML = "Phone: " + model;
         } 
       });
+
+      const UserAgent = navigator.userAgent
+        const device = {
+            iPad: /iPad/.test(UserAgent),
+            iPhone: /iPhone/.test(UserAgent),
+            Android: /Android/.test(UserAgent),
+            windows: /Windows/.test(UserAgent)
+        }
+
+        for(dev in device){
+            if(device[dev])
+            	document.getElementById("test2").innerHTML = "You are using " + dev;
+        }
 
 </script>
 
